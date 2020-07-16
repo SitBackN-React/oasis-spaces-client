@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
-import Layout from './../shared/Layout'
+// import Layout from './../shared/Layout'
 
 const ListCreate = (props) => {
   const [list, setList] = useState({ name: '', description: '' })
@@ -35,14 +35,14 @@ const ListCreate = (props) => {
   }
 
   return (
-    <Layout>
+    <div>
       <ListForm
         list={list}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath='/'
       />
-    </Layout>
+    </div>
   )
 }
 
