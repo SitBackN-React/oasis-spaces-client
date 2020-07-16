@@ -23,7 +23,7 @@
 8. As a signed in user, I would like to see all my bucket list items but not other users'.
 9. As a signed in user, I would like to cross off items to complete them.
 
-## Technoligies Used
+## Technologies Used
 
 
 
