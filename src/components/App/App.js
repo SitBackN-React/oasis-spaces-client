@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
-import Layout from './../shared/Layout'
+import Footer from './../shared/Footer'
+// import Layout from './../shared/Layout'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
@@ -34,7 +35,7 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Layout>
+      <Fragment>
         <Header user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
@@ -59,7 +60,8 @@ class App extends Component {
           )} />
           <Route exact path='/create-list' component={ListCreate} />
         </main>
-      </Layout>
+        <Footer />
+      </Fragment>
     )
   }
 }

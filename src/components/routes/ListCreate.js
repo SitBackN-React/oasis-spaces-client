@@ -4,26 +4,31 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
-import Layout from './../shared/Layout'
+// import Layout from './../shared/Layout'
 
 const ListCreate = (props) => {
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
 
   const handleChange = event => {
-    const updatedField = { [event.target.name]: event.target.value }
+    console.log(event.target.name)
+    console.log(event.target.value)
+    const updatedField = { [event.target.name]: event.target.value, [event.target.description]: event.target.value }
 
     const editedList = Object.assign({}, list, updatedField)
 
     setList(editedList)
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault()
 
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
+      // header: {
+      //   'Authorization': 'Token token=' + user.token
+      // },
       data: { list }
     })
       .then(res => setCreatedListId(res.data.list._id))
@@ -35,14 +40,14 @@ const ListCreate = (props) => {
   }
 
   return (
-    <Layout>
+    <div>
       <ListForm
         list={list}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath='/'
       />
-    </Layout>
+    </div>
   )
 }
 
