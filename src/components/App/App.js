@@ -63,10 +63,13 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/create-list' render={() => (
             <ListCreate msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/show-lists' render={() => (
+          <AuthenticatedRoute user={user} path='/lists' render={() => (
             <Lists msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/show-list' render={() => (
+          <AuthenticatedRoute user={user} path='/lists/:id' render={() => (
+            <List msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/lists/:id/edit' render={() => (
             <List msgAlert={this.msgAlert} user={user} />
           )} />
         </main>

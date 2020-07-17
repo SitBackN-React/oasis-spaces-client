@@ -8,6 +8,8 @@ import ListForm from './../shared/ListForm'
 
 const ListCreate = (props) => {
   console.log(props)
+  const token = props.user.token
+  console.log(token)
 
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
@@ -22,17 +24,19 @@ const ListCreate = (props) => {
     setList(editedList)
   }
 
-  const handleSubmit = (event, user) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
+    console.log(token)
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
-      header: {
-        'Authorization': `Token token=${user.token}`
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
       },
       data: { list, id }
     })
-      .then(res => setCreatedListId(res.data.list._id))
+      .then(res => console.log(res))
+      .then(res => setCreatedListId(res.data.data.list._id))
       .catch(console.error)
   }
 
