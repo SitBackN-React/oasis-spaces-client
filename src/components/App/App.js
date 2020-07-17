@@ -14,6 +14,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import ListCreate from './../routes/ListCreate'
 import Lists from './../routes/Lists'
 import List from './../routes/List'
+import ListEdit from './../routes/ListEdit'
 
 class App extends Component {
   constructor () {
@@ -70,7 +71,7 @@ class App extends Component {
             <List msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/lists/:id/edit' render={() => (
-            <List msgAlert={this.msgAlert} user={user} />
+            <ListEdit msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         <Footer />
