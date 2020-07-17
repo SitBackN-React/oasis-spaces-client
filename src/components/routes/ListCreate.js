@@ -6,13 +6,12 @@ import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
 // import Layout from './../shared/Layout
 
-const ListCreate = (user) => {
-  console.log(user)
-  // console.log(props)
+const ListCreate = (props) => {
+  console.log(props)
 
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
-
+  const id = `${props.user._id}`
   const handleChange = event => {
     console.log(event.target.name)
     console.log(event.target.value)
@@ -23,16 +22,15 @@ const ListCreate = (user) => {
     setList(editedList)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, user) => {
     event.preventDefault()
-
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
       header: {
         'Authorization': `Token token=${user.token}`
       },
-      data: { list }
+      data: { list, id }
     })
       .then(res => setCreatedListId(res.data.list._id))
       .catch(console.error)
