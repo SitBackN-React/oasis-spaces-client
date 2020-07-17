@@ -12,6 +12,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import ListCreate from './../routes/ListCreate'
+import Lists from './../routes/Lists'
 
 class App extends Component {
   constructor () {
@@ -59,7 +60,10 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/create-list' render={() => (
-            <ListCreate />
+            <ListCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/show-lists' render={() => (
+            <Lists msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         <Footer />
