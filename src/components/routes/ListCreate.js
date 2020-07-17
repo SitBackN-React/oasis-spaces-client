@@ -13,18 +13,17 @@ const ListCreate = (props) => {
 
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
-  const id = `${props.user._id}`
   const handleChange = event => {
     console.log(event.target.name)
     console.log(event.target.value)
-    const updatedField = { [event.target.name]: event.target.value, [event.target.description]: event.target.value }
+    const updatedField = { [event.target.name]: event.target.value }
 
     const editedList = Object.assign({}, list, updatedField)
 
     setList(editedList)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault()
     console.log(token)
     axios({
@@ -33,15 +32,15 @@ const ListCreate = (props) => {
       headers: {
         'Authorization': `Token token=${props.user.token}`
       },
-      data: { list, id }
+      data: { list }
     })
-      .then(res => console.log(res))
-      .then(res => setCreatedListId(res.data.data.list._id))
+      .then(res => console.log(res.data.list._id))
+      .then(res => setCreatedListId(res.data.list._id))
       .catch(console.error)
   }
 
   if (createdListId) {
-    return <Redirect to={`/lists/${setCreatedListId}`} />
+    return <Redirect to={`/lists/${createdListId}`} />
   }
 
   return (
