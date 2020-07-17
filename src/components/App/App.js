@@ -13,6 +13,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 
 import ListCreate from './../routes/ListCreate'
 import Lists from './../routes/Lists'
+import List from './../routes/List'
 
 class App extends Component {
   constructor () {
@@ -64,6 +65,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/show-lists' render={() => (
             <Lists msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/show-list' render={() => (
+            <List msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         <Footer />
