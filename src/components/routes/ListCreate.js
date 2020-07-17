@@ -4,9 +4,12 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
-// import Layout from './../shared/Layout'
+// import Layout from './../shared/Layout
 
-const ListCreate = (props) => {
+const ListCreate = (user) => {
+  console.log(user)
+  // console.log(props)
+
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
 
@@ -26,9 +29,9 @@ const ListCreate = (props) => {
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
-      // header: {
-      //   'Authorization': 'Token token=' + user.token
-      // },
+      header: {
+        'Authorization': `Token token=${user.token}`
+      },
       data: { list }
     })
       .then(res => setCreatedListId(res.data.list._id))
