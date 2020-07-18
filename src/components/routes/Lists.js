@@ -19,15 +19,17 @@ const Lists = (props) => {
       .catch(console.error)
   }, [])
 
+  const listsJsx = lists.map(list => (
+    <li key={list._id}>
+      <Link to={`/lists/${list._id}`}>{list.name}</Link>
+    </li>
+  ))
+
   return (
     <div>
       <h4>Lists</h4>
       <ul>
-        {lists && lists.length > 0
-          ? lists.map(list => {
-            return <div key={list._id}><Link to={`/lists/${list._id}`}>{list.name}</Link></div>
-          })
-          : 'Loading...'}
+        {listsJsx}
       </ul>
     </div>
   )
