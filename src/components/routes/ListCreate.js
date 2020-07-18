@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
+import messages from './../AutoDismissAlert/messages'
 
 const ListCreate = (props) => {
   const [list, setList] = useState({ name: '', description: '' })
@@ -19,6 +20,7 @@ const ListCreate = (props) => {
   const handleSubmit = event => {
     event.preventDefault()
 
+    const { msgAlert } = props
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
@@ -28,7 +30,19 @@ const ListCreate = (props) => {
       data: { list }
     })
       .then(res => setCreatedListId(res.data.list.id))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Create list success',
+        message: messages.createListSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setList({ name: '', description: '' })
+        msgAlert({
+          heading: 'Create list failed: ' + error.message,
+          message: messages.createListFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (createdListId) {
