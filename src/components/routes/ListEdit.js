@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ListForm from '../shared/ListForm'
-
 const ListEdit = props => {
   const [list, setList] = useState({
     name: '',
@@ -12,7 +11,13 @@ const ListEdit = props => {
   const [updated, setUpdated] = useState(false)
   //  functions like a componentDidMount
   useEffect(() => {
-    axios(`${apiUrl}/lists/${props.match.params.id}`)
+    axios({
+      url: `${apiUrl}/lists/${props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
+      }
+    })
       .then(res => setList(res.data.list))
       .catch(console.error)
   }, [])
@@ -29,6 +34,9 @@ const ListEdit = props => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
       method: 'PATCH',
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
+      },
       data: { list }
     })
       .then(() => setUpdated(true))
