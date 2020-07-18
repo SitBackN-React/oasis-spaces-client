@@ -21,7 +21,7 @@ const ListCreate = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    
+
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
