@@ -5,13 +5,10 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ListForm from './../shared/ListForm'
 
-
 const ListCreate = (props) => {
-
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
   const handleChange = event => {
-
     const updatedField = { [event.target.name]: event.target.value }
 
     const editedList = Object.assign({}, list, updatedField)

@@ -3,14 +3,11 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
-// import Layout from '../shared/Layout'
 
 const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
-
-  console.log(props.match)
-
+  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
