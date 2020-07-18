@@ -9,8 +9,16 @@ const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
 
+  console.log(props.match)
+
   useEffect(() => {
-    axios(`${apiUrl}/lists/${props.match.params.id}`)
+    axios({
+      url: `${apiUrl}/lists/${props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
+      }
+    })
       .then(res => setList(res.data.list))
       .catch(console.error)
   }, [])
@@ -18,7 +26,10 @@ const List = (props) => {
   const destroy = () => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
+      }
     })
       .then(() => setDeleted(true))
       .catch(console.error)
