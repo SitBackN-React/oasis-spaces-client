@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
-import ItemCreate from './ItemCreate'
+// import ItemCreate from './ItemCreate'
 
 const List = (props) => {
   const [list, setList] = useState(null)
@@ -61,7 +61,7 @@ const List = (props) => {
         </li>
       ))}</div>
       <Link to={`/lists/${props.match.params.id}/create-item`}>
-        <button onClick={ItemCreate}>Create Item</button>
+        <button>Create Item</button>
       </Link>
       <button onClick={destroy}>Delete List</button>
       <Link to={`/lists/${props.match.params.id}/edit`}>
