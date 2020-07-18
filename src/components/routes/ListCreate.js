@@ -7,15 +7,15 @@ import ListForm from './../shared/ListForm'
 // import Layout from './../shared/Layout
 
 const ListCreate = (props) => {
-  console.log(props)
-  const token = props.user.token
-  console.log(token)
+  // console.log(props)
+  // const token = props.user.token
+  // console.log(token)
 
   const [list, setList] = useState({ name: '', description: '' })
   const [createdListId, setCreatedListId] = useState(null)
   const handleChange = event => {
-    console.log(event.target.name)
-    console.log(event.target.value)
+    // console.log(event.target.name)
+    // console.log(event.target.value)
     const updatedField = { [event.target.name]: event.target.value }
 
     const editedList = Object.assign({}, list, updatedField)
@@ -25,7 +25,7 @@ const ListCreate = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(token)
+    // console.log(token)
     axios({
       url: `${apiUrl}/lists`,
       method: 'POST',
@@ -34,8 +34,7 @@ const ListCreate = (props) => {
       },
       data: { list }
     })
-      .then(res => console.log(res.data.list._id))
-      .then(res => setCreatedListId(res.data.list._id))
+      .then(res => setCreatedListId(res.data.list.id))
       .catch(console.error)
   }
 
