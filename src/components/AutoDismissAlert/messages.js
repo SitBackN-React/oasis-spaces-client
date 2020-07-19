@@ -13,5 +13,7 @@ export default {
   showListSuccess: 'You are now viewing your selected list.',
   showListFailure: 'Please try to show list again.',
   showItemSuccess: 'You are now viewing your selected item.',
-  showItemFailure: 'Please try to show item again.'
+  showItemFailure: 'Please try to show item again.',
+  editListSuccess: 'Your list has been successfully edited.',
+  editListFailure: 'Failed to update your list.'
 }

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ItemForm from '../shared/ItemForm'
+
 const ItemEdit = props => {
   const [item, setItem] = useState({
     name: '',
@@ -44,7 +45,7 @@ const ItemEdit = props => {
       .catch(console.error)
   }
   if (updated) {
-    return <Redirect to={`${props.location.pathname}`} />
+    return <Redirect to={'/lists'} />
   }
   return (
     <div>
