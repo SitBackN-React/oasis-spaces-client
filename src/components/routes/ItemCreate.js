@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ItemForm from './../shared/ItemForm'
-// import messages from './../AutoDismissAlert/messages'
+import messages from './../AutoDismissAlert/messages'
 
 const ItemCreate = (props) => {
   const [item, setItem] = useState({ name: '', note: '' })
@@ -20,7 +20,7 @@ const ItemCreate = (props) => {
   const handleSubmit = event => {
     event.preventDefault()
 
-    // const { msgAlert } = props
+    const { msgAlert } = props
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
       method: 'POST',
@@ -35,20 +35,19 @@ const ItemCreate = (props) => {
         return newItemId
       })
       .then(newItemId => setCreatedItemId(newItemId))
-      .catch(console.error)
-    // .then(() => msgAlert({
-    //   heading: 'Create item success',
-    //   message: messages.createItemSuccess,
-    //   variant: 'success'
-    // }))
-    // .catch(error => {
-    //   setItem({ name: '', note: '' })
-    //   msgAlert({
-    //     heading: 'Create item failed: ' + error.message,
-    //     message: messages.createListFailure,
-    //     variant: 'danger'
-    //   })
-    // })
+      .then(() => msgAlert({
+        heading: 'Created item successfully',
+        message: messages.createItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setItem({ name: '', note: '' })
+        msgAlert({
+          heading: 'Create item failed: ' + error.message,
+          message: messages.createListFailure,
+          variant: 'danger'
+        })
+      })
   }
   console.log(setCreatedItemId)
   if (createdItemId) {
