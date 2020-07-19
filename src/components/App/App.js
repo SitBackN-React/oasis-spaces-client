@@ -17,6 +17,7 @@ import List from './../routes/List'
 import ListEdit from './../routes/ListEdit'
 import Item from './../routes/Item'
 import ItemCreate from './../routes/ItemCreate'
+import ItemEdit from './../routes/ItemEdit'
 
 class App extends Component {
   constructor () {
@@ -80,6 +81,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/lists/:id/create-item' render={(props) => (
             <ItemCreate {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:id/edit-item' render={(props) => (
+            <ItemEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         <Footer />

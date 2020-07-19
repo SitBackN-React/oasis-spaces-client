@@ -2,53 +2,54 @@ import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import ListForm from '../shared/ListForm'
-const ListEdit = props => {
-  const [list, setList] = useState({
+import ItemForm from '../shared/ItemForm'
+const ItemEdit = props => {
+  const [item, setItem] = useState({
     name: '',
-    description: ''
+    note: ''
   })
   const [updated, setUpdated] = useState(false)
   //  functions like a componentDidMount
   useEffect(() => {
     axios({
-      url: `${apiUrl}/lists/${props.match.params.id}`,
+      url: `${apiUrl}${props.location.pathname}`,
       method: 'GET',
       headers: {
         'Authorization': `Token token=${props.user.token}`
       }
     })
-      .then(res => setList(res.data.list))
+      .then(res => console.log(res))
+      .then(res => setItem(res.data.item))
       .catch(console.error)
   }, [])
   const handleChange = event => {
     event.persist()
-    setList(prevList => {
+    setItem(prevItem => {
       const updatedField = { [event.target.name]: event.target.value }
-      const editedList = Object.assign({}, prevList, updatedField)
-      return editedList
+      const editedItem = Object.assign({}, prevItem, updatedField)
+      return editedItem
     })
   }
   const handleSubmit = event => {
     event.preventDefault()
     axios({
-      url: `${apiUrl}/lists/${props.match.params.id}`,
+      url: `${apiUrl}${props.location.pathname}`,
       method: 'PATCH',
       headers: {
         'Authorization': `Token token=${props.user.token}`
       },
-      data: { list }
+      data: { item }
     })
       .then(() => setUpdated(true))
       .catch(console.error)
   }
   if (updated) {
-    return <Redirect to={`/lists/${props.match.params.id}`} />
+    return <Redirect to={`${props.location.pathname}`} />
   }
   return (
     <div>
-      <ListForm
-        list={list}
+      <ItemForm
+        item={item}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath={`/lists/${props.match.params.id}`}
@@ -56,4 +57,4 @@ const ListEdit = props => {
     </div>
   )
 }
-export default ListEdit
+export default ItemEdit

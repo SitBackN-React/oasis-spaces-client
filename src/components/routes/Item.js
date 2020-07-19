@@ -49,7 +49,7 @@ const Item = (props) => {
       <h4>{item.name}</h4>
       <p>{item.note}</p>
       <button onClick={destroy}>Delete Item</button>
-      <Link to={`/lists/${props.match.params.id}/edit`}>
+      <Link to={`${props.location.pathname}/edit-item`}>
         <button>Edit Item</button>
       </Link>
       <Link to='/lists/:id'>Back to list</Link>
