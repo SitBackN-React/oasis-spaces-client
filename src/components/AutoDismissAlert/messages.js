@@ -9,8 +9,9 @@ export default {
   createListSuccess: 'List created successfully',
   createListFailure: 'Failed to create list',
   showListsSuccess: 'Here are all of your lists.',
-  showListsFailure: 'Please try again',
+  showListsFailure: 'Please try to show lists again',
   showListSuccess: 'You are now viewing your selected list.',
-  showListFailure: 'Please try again',
-  deleteListSuccess: 'List deleted successfully'
+  showListFailure: 'Please try to show list again.',
+  showItemSuccess: 'You are now viewing your selected item.',
+  showItemFailure: 'Please try to show item again.'
 }

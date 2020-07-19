@@ -3,10 +3,13 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
+import messages from './../AutoDismissAlert/messages'
 
 const Item = (props) => {
   const [item, setItem] = useState(null)
   const [deleted, setDeleted] = useState(false)
+  const { msgAlert } = props
+
   console.log(props)
   useEffect(() => {
     axios({
@@ -17,7 +20,20 @@ const Item = (props) => {
       }
     })
       .then(res => setItem(res.data.item))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Showing selected item',
+        message: messages.showItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setItem({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to show item ' + error.message,
+          message: messages.showItemFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const destroy = () => {
