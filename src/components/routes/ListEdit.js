@@ -3,12 +3,15 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ListForm from '../shared/ListForm'
+import messages from './../AutoDismissAlert/messages'
+
 const ListEdit = props => {
   const [list, setList] = useState({
     name: '',
     description: ''
   })
   const [updated, setUpdated] = useState(false)
+  const { msgAlert } = props
   //  functions like a componentDidMount
   useEffect(() => {
     axios({
@@ -19,7 +22,20 @@ const ListEdit = props => {
       }
     })
       .then(res => setList(res.data.list))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Edited List',
+        message: messages.editListSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setList({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to update ' + error.message,
+          message: messages.editListFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
   const handleChange = event => {
     event.persist()
