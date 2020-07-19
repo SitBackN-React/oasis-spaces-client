@@ -4,10 +4,13 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 // import ItemCreate from './ItemCreate'
+import messages from './../AutoDismissAlert/messages'
 
 const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
+  const { msgAlert } = props
+
   console.log(props)
   useEffect(() => {
     axios({
@@ -18,7 +21,20 @@ const List = (props) => {
       }
     })
       .then(res => setList(res.data.list))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Showing selected list',
+        message: messages.showListSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setList({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to show list ' + error.message,
+          message: messages.showListFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const destroy = () => {
