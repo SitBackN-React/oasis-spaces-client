@@ -4,8 +4,11 @@ import axios from 'axios'
 
 import apiUrl from './../../apiConfig'
 
+import messages from './../AutoDismissAlert/messages'
+
 const Lists = (props) => {
   const [lists, setLists] = useState([])
+  const { msgAlert } = props
 
   useEffect(() => {
     axios({
@@ -16,7 +19,21 @@ const Lists = (props) => {
       }
     })
       .then(res => setLists(res.data.lists))
-      .catch(console.error)
+      // .catch(console.error)
+
+      .then(() => msgAlert({
+        heading: 'Showing all lists',
+        message: messages.showListsSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setLists({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to show all lists ' + error.message,
+          message: messages.showListsFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const listsJsx = lists.map(list => (

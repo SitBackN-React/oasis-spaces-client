@@ -7,5 +7,7 @@ export default {
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   createListSuccess: 'List created successfully',
-  createListFailure: 'Failed to create list'
+  createListFailure: 'Failed to create list',
+  showListsSuccess: 'Here are all of your lists.',
+  showListsFailure: 'Please try again'
 }
