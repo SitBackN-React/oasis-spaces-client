@@ -22,14 +22,15 @@ const ItemCreate = (props) => {
 
     // const { msgAlert } = props
     axios({
-      url: `${apiUrl}/lists`,
+      url: `${apiUrl}/lists/${props.match.params.id}`,
       method: 'POST',
       headers: {
         'Authorization': `Token token=${props.user.token}`
       },
       data: { item }
     })
-      .then(res => setCreatedItemId(res.data.list.id))
+      // .then(res => (console.log(res.data.list._id)))
+      .then(res => setCreatedItemId(res.data.list.items._id))
       .catch(console.error)
     // .then(() => msgAlert({
     //   heading: 'Create item success',
@@ -45,7 +46,7 @@ const ItemCreate = (props) => {
     //   })
     // })
   }
-
+  console.log(setCreatedItemId)
   if (createdItemId) {
     return <Redirect to={`/lists/${props.match.params.id}/items/${createdItemId}`} />
   }
