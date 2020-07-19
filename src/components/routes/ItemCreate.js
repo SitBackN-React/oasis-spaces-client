@@ -50,11 +50,7 @@ const ItemCreate = (props) => {
     //   })
     // })
   }
-<<<<<<< HEAD
-  console.log(createdItemId)
-=======
   console.log(setCreatedItemId)
->>>>>>> ccae7dda87b8d18e77d32e0124d5f73d843aaada
   if (createdItemId) {
     return <Redirect to={`/lists/${props.match.params.id}/items/${createdItemId}`} />
   }
