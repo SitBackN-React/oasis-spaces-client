@@ -10,7 +10,7 @@ const Item = (props) => {
   console.log(props)
   useEffect(() => {
     axios({
-      url: `${apiUrl}/lists/:id/items${props.match.params.id}`,
+      url: `${apiUrl}${props.location.pathname}`,
       method: 'GET',
       headers: {
         'Authorization': `Token token=${props.user.token}`
@@ -22,7 +22,7 @@ const Item = (props) => {
 
   const destroy = () => {
     axios({
-      url: `${apiUrl}/lists/:id/items${props.match.params.id}`,
+      url: `${apiUrl}${props.location.pathname}`,
       method: 'DELETE',
       headers: {
         'Authorization': `Token token=${props.user.token}`

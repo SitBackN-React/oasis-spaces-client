@@ -29,8 +29,12 @@ const ItemCreate = (props) => {
       },
       data: { item }
     })
-      // .then(res => (console.log(res.data.list._id)))
-      .then(res => setCreatedItemId(res.data.list.items._id))
+      .then(res => {
+        const newItemId = res.data.list.items[res.data.list.items.length - 1]._id
+        console.log(newItemId)
+        return newItemId
+      })
+      .then(newItemId => setCreatedItemId(newItemId))
       .catch(console.error)
     // .then(() => msgAlert({
     //   heading: 'Create item success',
@@ -46,7 +50,11 @@ const ItemCreate = (props) => {
     //   })
     // })
   }
+<<<<<<< HEAD
+  console.log(createdItemId)
+=======
   console.log(setCreatedItemId)
+>>>>>>> ccae7dda87b8d18e77d32e0124d5f73d843aaada
   if (createdItemId) {
     return <Redirect to={`/lists/${props.match.params.id}/items/${createdItemId}`} />
   }
