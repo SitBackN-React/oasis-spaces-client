@@ -37,7 +37,7 @@ const Lists = (props) => {
   }, [])
 
   const listsJsx = lists.map(list => (
-    <li key={list._id}>
+    <li key={list._id}><input className="checkbox" type="checkbox" />
       <Link to={`/lists/${list._id}`}>{list.name}</Link>
     </li>
   ))
