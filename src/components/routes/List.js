@@ -8,7 +8,6 @@ const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
@@ -77,7 +76,7 @@ const List = (props) => {
       <h4>{list.name}</h4>
       <p>{list.description}</p>
       <div>{list.items.map(item => (
-        <li key={item._id}>
+        <li key={item._id}><input className="checkbox" type="checkbox" />
           <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
         </li>
       ))}</div>
