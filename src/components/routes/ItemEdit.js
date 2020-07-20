@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
@@ -11,18 +11,6 @@ const ItemEdit = props => {
   })
   const [updated, setUpdated] = useState(false)
   //  functions like a componentDidMount
-  useEffect(() => {
-    axios({
-      url: `${apiUrl}${props.location.pathname}`,
-      method: 'GET',
-      headers: {
-        'Authorization': `Token token=${props.user.token}`
-      }
-    })
-      .then(res => console.log(res))
-      .then(res => setItem(res.data.item))
-      .catch(console.error)
-  }, [])
   const handleChange = event => {
     event.persist()
     setItem(prevItem => {
