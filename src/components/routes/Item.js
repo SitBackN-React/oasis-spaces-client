@@ -67,7 +67,7 @@ const Item = (props) => {
 
   if (deleted) {
     return (
-      <Redirect to={{ pathname: '/' }} />
+      <Redirect to={`/lists/${props.match.params.id}`} />
     )
   }
 
@@ -76,10 +76,10 @@ const Item = (props) => {
       <h4>{item.name}</h4>
       <p>{item.note}</p>
       <button onClick={destroy}>Delete Item</button>
-      <Link to={`${props.location.pathname}/edit-item`}>
+      <Link to={`/lists/${props.match.params.id}`}>
         <button>Edit Item</button>
       </Link>
-      <Link to='/lists/:id'>Back to list</Link>
+      <Link to={`/lists/${props.match.params.id}`}>Back to list</Link>
     </div>
   )
 }
