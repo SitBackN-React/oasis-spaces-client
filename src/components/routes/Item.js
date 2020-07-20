@@ -10,7 +10,6 @@ const Item = (props) => {
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
 
-  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}${props.location.pathname}`,
