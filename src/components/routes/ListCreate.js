@@ -56,7 +56,7 @@ const ListCreate = (props) => {
         list={list}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        cancelPath='/'
+        cancelPath='/lists'
       />
     </div>
   )
