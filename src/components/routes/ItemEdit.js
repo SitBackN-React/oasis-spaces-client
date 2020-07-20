@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ItemForm from '../shared/ItemForm'
+import messages from './../AutoDismissAlert/messages'
 
 const ItemEdit = props => {
   const [item, setItem] = useState({
@@ -10,6 +11,7 @@ const ItemEdit = props => {
     note: ''
   })
   const [updated, setUpdated] = useState(false)
+  const { msgAlert } = props
   //  functions like a componentDidMount
   const handleChange = event => {
     event.persist()
@@ -30,10 +32,23 @@ const ItemEdit = props => {
       data: { item }
     })
       .then(() => setUpdated(true))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Edited Item Successfully',
+        message: messages.editItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setUpdated({ name: '', note: '' })
+        msgAlert({
+          heading: 'Failed to update item ' + error.message,
+          message: messages.editItemFailure,
+          variant: 'danger'
+        })
+      })
   }
   if (updated) {
-    return <Redirect to={'/lists'} />
+    return <Redirect to={`/lists/${props.location.pathname}`} />
   }
   return (
     <div>

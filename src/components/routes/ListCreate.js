@@ -13,7 +13,7 @@ const ListCreate = (props) => {
     const updatedField = { [event.target.name]: event.target.value }
 
     const editedList = Object.assign({}, list, updatedField)
-
+    console.log(props)
     setList(editedList)
   }
 
@@ -29,6 +29,7 @@ const ListCreate = (props) => {
       },
       data: { list }
     })
+      // .then(res => console.log(res))
       .then(res => setCreatedListId(res.data.list._id))
       .then(() => msgAlert({
         heading: 'Create list success',
