@@ -1,12 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
 
-p {
+.footer {
   text-align: center;
-  vertical-align: middle;
+  vertical-align: bottom;
   position: absolute;
   bottom: 0;
+  right: 0;
 }
 
 h4 {
+  text-align: center;
+}
 
+ul {
+  text-align: center;
+  display: inline;
+  list-style-position: inside;
+}
+
+.container {
+  text-align: center;
 }
