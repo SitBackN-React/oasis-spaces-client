@@ -22,3 +22,28 @@ ul {
   text-align: center;
   justify-content: center;
 }
+
+body {
+  background-image: url('https://image.freepik.com/free-vector/iridescent-holographic-background_54454-10.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Red Rose', cursive;
+}
+
+.lists {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+}
+
+.items {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+}
