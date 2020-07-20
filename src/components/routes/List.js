@@ -82,11 +82,11 @@ const List = (props) => {
         </li>
       ))}</div>
       <Link to={`/lists/${props.match.params.id}/create-item`}>
-        <button>Create Item</button>
+        <button className="button">Create Item</button>
       </Link>
-      <button onClick={destroy}>Delete List</button>
+      <button className="button" onClick={destroy}>Delete List</button>
       <Link to={`/lists/${props.match.params.id}/edit`}>
-        <button>Edit List</button>
+        <button className="button">Edit List</button>
       </Link>
       <Link to='/lists'>Back to all lists</Link>
     </div>
