@@ -1,1 +1,68 @@
 @import '~bootstrap/scss/bootstrap';
+
+.footer {
+  text-align: center;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+h4 {
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+  display: inline;
+  list-style-position: inside;
+  list-style: none
+}
+
+.container {
+  text-align: center;
+  justify-content: center;
+}
+
+body {
+  background-image: url('https://media.git.generalassemb.ly/user/28180/files/abe4a080-cab5-11ea-917f-d1695715328e');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: '100vh';
+  background-size: cover;
+  font-family: 'Red Rose', cursive;
+}
+
+.lists {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+}
+
+.items {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+}
+
+.button {
+  variant: light;
+}
+
+img {
+  height: 50px;
+  width: 60px;
+}
+
+.checkbox {
+  margin: 10px 15px;
+}
+
+li {
+  list-style: none
+}

@@ -4,10 +4,20 @@ import { Route } from 'react-router-dom'
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
+import Footer from './../shared/Footer'
+// import Layout from './../shared/Layout'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+
+import ListCreate from './../routes/ListCreate'
+import Lists from './../routes/Lists'
+import List from './../routes/List'
+import ListEdit from './../routes/ListEdit'
+import Item from './../routes/Item'
+import ItemCreate from './../routes/ItemCreate'
+import ItemEdit from './../routes/ItemEdit'
 
 class App extends Component {
   constructor () {
@@ -54,7 +64,29 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/create-list' render={() => (
+            <ListCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists' render={() => (
+            <Lists msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id' render={(props) => (
+            <List {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id/edit' render={(props) => (
+            <ListEdit {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:itemId' render={(props) => (
+            <Item {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id/create-item' render={(props) => (
+            <ItemCreate {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:itemId/edit-item' render={(props) => (
+            <ItemEdit {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
         </main>
+        <Footer />
       </Fragment>
     )
   }

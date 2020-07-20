@@ -5,5 +5,21 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  createListSuccess: 'List created successfully',
+  createListFailure: 'Failed to create list',
+  showListsSuccess: 'Here are all of your lists.',
+  showListsFailure: 'Please try to show lists again',
+  showListSuccess: 'You are now viewing your selected list.',
+  showListFailure: 'Please try to show list again.',
+  showItemSuccess: 'You are now viewing your selected item.',
+  showItemFailure: 'Please try to show item again.',
+  editListSuccess: 'Your list has been successfully edited.',
+  editListFailure: 'Failed to update your list.',
+  editItemSuccess: 'Click on your list to show your edited item.',
+  editItemFailure: 'Failed to update item. Please try again.',
+  deleteItemSuccess: 'Item deleted successfully',
+  deleteItemFailure: 'Item failed to delete',
+  deleteListSuccess: 'List deleted successfully',
+  deleteListFailure: 'List failed to delete'
 }

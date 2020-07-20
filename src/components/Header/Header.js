@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
+    <Nav.Link href="#create-list">Create New List</Nav.Link>
+    <Nav.Link href="#lists">Show My Lists</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>
@@ -18,14 +20,14 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link to="/">Home</Nav.Link>
+    <Nav.Link to="/"></Nav.Link>
   </Fragment>
 )
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      react-auth-template
+      Oasis Spaces <img src="https://media.git.generalassemb.ly/user/28180/files/56a98e80-cab7-11ea-850a-52fae3bc0849" alt="Palm Tree"/>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
