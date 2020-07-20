@@ -27,7 +27,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      Oasis Spaces
+      Oasis Spaces <img src="https://media.git.generalassemb.ly/user/28180/files/56a98e80-cab7-11ea-850a-52fae3bc0849" alt="Palm Tree"/>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

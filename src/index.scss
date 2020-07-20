@@ -25,10 +25,11 @@ ul {
 }
 
 body {
-  background-image: url('https://image.freepik.com/free-vector/iridescent-holographic-background_54454-10.jpg');
+  background-image: url('https://media.git.generalassemb.ly/user/28180/files/abe4a080-cab5-11ea-917f-d1695715328e');
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  height: '100vh';
   background-size: cover;
   font-family: 'Red Rose', cursive;
 }
@@ -49,10 +50,11 @@ body {
   border-style: groove;
 }
 
-.checkbox {
-  margin: 10px 15px;
+.button {
+  variant: light;
 }
 
-li {
-  list-style: none
+img {
+  height: 50px;
+  width: 60px;
 }
