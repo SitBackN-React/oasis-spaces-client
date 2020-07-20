@@ -22,20 +22,7 @@ const ListEdit = props => {
       }
     })
       .then(res => setList(res.data.list))
-      // .catch(console.error)
-      .then(() => msgAlert({
-        heading: 'Edited List',
-        message: messages.editListSuccess,
-        variant: 'warning'
-      }))
-      .catch(error => {
-        setList({ name: '', description: '' })
-        msgAlert({
-          heading: 'Failed to update ' + error.message,
-          message: messages.editListFailure,
-          variant: 'danger'
-        })
-      })
+      .catch(console.error)
   }, [])
   const handleChange = event => {
     event.persist()
@@ -56,11 +43,11 @@ const ListEdit = props => {
       data: { list }
     })
       .then(() => setUpdated(true))
-      .catch(console.error)
+      // .catch(console.error)
       .then(() => msgAlert({
         heading: 'Edited List',
         message: messages.editListSuccess,
-        variant: 'success'
+        variant: 'warning'
       }))
       .catch(error => {
         setList({ name: '', description: '' })
