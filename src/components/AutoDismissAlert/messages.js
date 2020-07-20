@@ -15,5 +15,7 @@ export default {
   showItemSuccess: 'You are now viewing your selected item.',
   showItemFailure: 'Please try to show item again.',
   editListSuccess: 'Your list has been successfully edited.',
-  editListFailure: 'Failed to update your list.'
+  editListFailure: 'Failed to update your list.',
+  editItemSuccess: 'Click on your list to show your edited item.',
+  editItemFailure: 'Failed to update item. Please try again.'
 }
