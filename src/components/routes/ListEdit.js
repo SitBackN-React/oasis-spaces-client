@@ -26,7 +26,7 @@ const ListEdit = props => {
       .then(() => msgAlert({
         heading: 'Edited List',
         message: messages.editListSuccess,
-        variant: 'success'
+        variant: 'warning'
       }))
       .catch(error => {
         setList({ name: '', description: '' })
