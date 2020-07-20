@@ -17,5 +17,7 @@ export default {
   editListSuccess: 'Your list has been successfully edited.',
   editListFailure: 'Failed to update your list.',
   editItemSuccess: 'Click on your list to show your edited item.',
-  editItemFailure: 'Failed to update item. Please try again.'
+  editItemFailure: 'Failed to update item. Please try again.',
+  deleteItemSuccess: 'Item deleted successfully',
+  deleteItemFailure: 'Item failed to delete'
 }

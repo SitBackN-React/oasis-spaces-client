@@ -45,7 +45,20 @@ const Item = (props) => {
       }
     })
       .then(() => setDeleted(true))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Item Deleted',
+        message: messages.deleteItemSuccess,
+        variant: 'warning'
+      }))
+      .catch(error => {
+        setItem({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to delete' + error.message,
+          message: messages.deleteItemFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (!item) {
@@ -54,9 +67,7 @@ const Item = (props) => {
 
   if (deleted) {
     return (
-      <Redirect to={{
-        pathname: '/', state: { msg: 'Item succesfully deleted!' }
-      }} />
+      <Redirect to={{ pathname: '/' }} />
     )
   }
 
