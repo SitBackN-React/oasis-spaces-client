@@ -76,13 +76,13 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/lists/:id/edit' render={(props) => (
             <ListEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:id' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:itemId' render={(props) => (
             <Item {...props} msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/lists/:id/create-item' render={(props) => (
             <ItemCreate {...props} msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:id/edit-item' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/lists/:id/items/:itemId/edit-item' render={(props) => (
             <ItemEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>

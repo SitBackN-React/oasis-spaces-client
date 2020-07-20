@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
@@ -13,6 +13,17 @@ const ItemEdit = props => {
   const [updated, setUpdated] = useState(false)
   const { msgAlert } = props
   //  functions like a componentDidMount
+  useEffect(() => {
+    axios({
+      url: `${apiUrl}/lists/${props.match.params.id}/items/${props.match.params.itemId}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${props.user.token}`
+      }
+    })
+      .then(res => setItem(res.data.item))
+      .catch(console.error)
+  }, [])
   const handleChange = event => {
     event.persist()
     setItem(prevItem => {
@@ -24,7 +35,7 @@ const ItemEdit = props => {
   const handleSubmit = event => {
     event.preventDefault()
     axios({
-      url: `${apiUrl}${props.location.pathname}`,
+      url: `${apiUrl}/lists/${props.match.params.id}/items/${props.match.params.itemId}`,
       method: 'PATCH',
       headers: {
         'Authorization': `Token token=${props.user.token}`
@@ -48,7 +59,7 @@ const ItemEdit = props => {
       })
   }
   if (updated) {
-    return <Redirect to={`/lists/${props.location.pathname}`} />
+    return <Redirect to={'/lists'} />
   }
   return (
     <div>
