@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-  <p>Created by SitBackN`react</p>
+  <p className="footer">Created by SitBackN`react</p>
 )
 
 export default Footer
