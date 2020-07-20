@@ -36,7 +36,7 @@ const ItemEdit = props => {
       .then(() => msgAlert({
         heading: 'Edited Item Successfully',
         message: messages.editItemSuccess,
-        variant: 'success'
+        variant: 'warning'
       }))
       .catch(error => {
         setUpdated({ name: '', note: '' })
