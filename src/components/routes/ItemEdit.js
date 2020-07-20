@@ -59,7 +59,7 @@ const ItemEdit = props => {
       })
   }
   if (updated) {
-    return <Redirect to={'/lists'} />
+    return <Redirect to={`/lists/${props.match.params.id}/items/${props.match.params.itemId}`} />
   }
   return (
     <div>
@@ -67,7 +67,7 @@ const ItemEdit = props => {
         item={item}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        cancelPath={`/lists/${props.match.params.id}`}
+        cancelPath={`/lists/${props.match.params.id}/items/${props.match.params.itemId}`}
       />
     </div>
   )

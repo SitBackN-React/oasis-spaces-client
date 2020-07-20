@@ -42,7 +42,20 @@ const List = (props) => {
       }
     })
       .then(() => setDeleted(true))
-      .catch(console.error)
+      // .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'List Deleted',
+        message: messages.deleteListSuccess,
+        variant: 'warning'
+      }))
+      .catch(error => {
+        setList({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to delete' + error.message,
+          message: messages.deleteListFailure,
+          variant: 'danger'
+        })
+      })
   }
   if (!list) {
     return <p>Loading...</p>
@@ -73,7 +86,7 @@ const List = (props) => {
       </Link>
       <button onClick={destroy}>Delete List</button>
       <Link to={`/lists/${props.match.params.id}/edit`}>
-        <button>Edit</button>
+        <button>Edit List</button>
       </Link>
       <Link to='/lists'>Back to all lists</Link>
     </div>
