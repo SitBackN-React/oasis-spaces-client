@@ -57,6 +57,19 @@ const ListEdit = props => {
     })
       .then(() => setUpdated(true))
       .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Edited List',
+        message: messages.editListSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        setList({ name: '', description: '' })
+        msgAlert({
+          heading: 'Failed to update ' + error.message,
+          message: messages.editListFailure,
+          variant: 'danger'
+        })
+      })
   }
   if (updated) {
     return <Redirect to={`/lists/${props.match.params.id}`} />
