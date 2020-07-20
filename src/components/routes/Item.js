@@ -24,7 +24,7 @@ const Item = (props) => {
       .then(() => msgAlert({
         heading: 'Showing selected item',
         message: messages.showItemSuccess,
-        variant: 'success'
+        variant: 'primary'
       }))
       .catch(error => {
         setItem({ name: '', description: '' })
@@ -49,7 +49,7 @@ const Item = (props) => {
       .then(() => msgAlert({
         heading: 'Item Deleted',
         message: messages.deleteItemSuccess,
-        variant: 'warning'
+        variant: 'success'
       }))
       .catch(error => {
         setItem({ name: '', description: '' })
@@ -72,7 +72,7 @@ const Item = (props) => {
   }
 
   return (
-    <div>
+    <div className="items">
       <h4>{item.name}</h4>
       <p>{item.note}</p>
       <button onClick={destroy}>Delete Item</button>

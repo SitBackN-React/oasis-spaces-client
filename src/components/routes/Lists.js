@@ -24,7 +24,7 @@ const Lists = (props) => {
       .then(() => msgAlert({
         heading: 'Showing all lists',
         message: messages.showListsSuccess,
-        variant: 'success'
+        variant: 'primary'
       }))
       .catch(error => {
         setLists({ name: '', description: '' })
@@ -43,7 +43,7 @@ const Lists = (props) => {
   ))
 
   return (
-    <div>
+    <div className="lists">
       <h4>Lists</h4>
       <ul>
         {listsJsx}

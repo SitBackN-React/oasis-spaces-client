@@ -22,7 +22,7 @@ const List = (props) => {
       .then(() => msgAlert({
         heading: 'Showing selected list',
         message: messages.showListSuccess,
-        variant: 'success'
+        variant: 'primary'
       }))
       .catch(error => {
         setList({ name: '', description: '' })
@@ -46,7 +46,7 @@ const List = (props) => {
       .then(() => msgAlert({
         heading: 'List Deleted',
         message: messages.deleteListSuccess,
-        variant: 'warning'
+        variant: 'success'
       }))
       .catch(error => {
         setList({ name: '', description: '' })
