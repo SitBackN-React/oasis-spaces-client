@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-
 import apiUrl from '../../apiConfig'
 // import ItemCreate from './ItemCreate'
 import messages from './../AutoDismissAlert/messages'
-
 const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-
   console.log(props)
   useEffect(() => {
     axios({
@@ -36,7 +33,6 @@ const List = (props) => {
         })
       })
   }, [])
-
   const destroy = () => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
@@ -48,11 +44,9 @@ const List = (props) => {
       .then(() => setDeleted(true))
       .catch(console.error)
   }
-
   if (!list) {
     return <p>Loading...</p>
   }
-
   if (deleted) {
     return (
       <Redirect to={{
@@ -60,13 +54,11 @@ const List = (props) => {
       }} />
     )
   }
-
   // list.items.map(item => (
   //   <li key={item._id}>
   //     <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
   //   </li>
   // ))
-
   return (
     <div>
       <h4>{list.name}</h4>
@@ -87,5 +79,4 @@ const List = (props) => {
     </div>
   )
 }
-
 export default List
