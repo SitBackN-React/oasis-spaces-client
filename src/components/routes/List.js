@@ -56,7 +56,7 @@ const List = (props) => {
   if (deleted) {
     return (
       <Redirect to={{
-        pathname: '/', state: { msg: 'List succesfully deleted!' }
+        pathname: '/lists', state: { msg: 'List succesfully deleted!' }
       }} />
     )
   }
