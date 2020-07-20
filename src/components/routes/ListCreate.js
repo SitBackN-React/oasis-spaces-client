@@ -29,7 +29,7 @@ const ListCreate = (props) => {
       },
       data: { list }
     })
-      .then(res => setCreatedListId(res.data.list.id))
+      .then(res => setCreatedListId(res.data.list._id))
       .then(() => msgAlert({
         heading: 'Create list success',
         message: messages.createListSuccess,
