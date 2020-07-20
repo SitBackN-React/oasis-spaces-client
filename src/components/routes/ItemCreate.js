@@ -31,7 +31,6 @@ const ItemCreate = (props) => {
     })
       .then(res => {
         const newItemId = res.data.list.items[res.data.list.items.length - 1]._id
-        console.log(newItemId)
         return newItemId
       })
       .then(newItemId => setCreatedItemId(newItemId))
@@ -49,7 +48,6 @@ const ItemCreate = (props) => {
         })
       })
   }
-  console.log(setCreatedItemId)
   if (createdItemId) {
     return <Redirect to={`/lists/${props.match.params.id}/items/${createdItemId}`} />
   }

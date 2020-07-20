@@ -8,7 +8,6 @@ const List = (props) => {
   const [list, setList] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/lists/${props.match.params.id}`,
