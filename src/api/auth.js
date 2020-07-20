@@ -4,7 +4,7 @@ import axios from 'axios'
 export const signUp = credentials => {
   return axios({
     method: 'POST',
-    url: apiUrl + 'sign-up',
+    url: apiUrl + '/sign-up',
     data: {
       credentials: {
         email: credentials.email,
