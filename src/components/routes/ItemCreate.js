@@ -49,7 +49,7 @@ const ItemCreate = (props) => {
       })
   }
   if (createdItemId) {
-    return <Redirect to={`/lists/${props.match.params.id}/items/${createdItemId}`} />
+    return <Redirect to={`/lists/${props.match.params.id}`} />
   }
 
   return (

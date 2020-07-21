@@ -71,23 +71,41 @@ const List = (props) => {
   //     <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
   //   </li>
   // ))
+
+  const itemsJsx = list.items.map(item => (
+    <li key={item._id}>
+      <div className="list-row">
+        <input className="checkbox" type="checkbox" />
+      </div>
+
+      <div className="list-row">
+        <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
+      </div>
+    </li>
+  ))
+
   return (
-    <div>
+    <div className="list-style">
       <h4>{list.name}</h4>
       <p>{list.description}</p>
-      <div>{list.items.map(item => (
-        <li key={item._id}><input className="checkbox" type="checkbox" />
-          <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
-        </li>
-      ))}</div>
-      <Link to={`/lists/${props.match.params.id}/create-item`}>
-        <button className="button">Create Item</button>
-      </Link>
-      <button className="button" onClick={destroy}>Delete List</button>
-      <Link to={`/lists/${props.match.params.id}/edit`}>
-        <button className="button">Edit List</button>
-      </Link>
-      <Link to='/lists'>Back to all lists</Link>
+      <div className="center">
+        <div className="list-display">
+          {itemsJsx}
+        </div>
+      </div>
+      <br />
+      <div>
+        <button className="button btn btn-danger" onClick={destroy}>Delete List</button>
+        <Link to={`/lists/${props.match.params.id}/create-item`}>
+          <button className="button btn btn-success">Create Item</button>
+        </Link>
+        <Link to={`/lists/${props.match.params.id}/edit`}>
+          <button className="button btn btn-warning">Edit List</button>
+        </Link>
+      </div>
+      <div>
+        <Link to='/lists'>Back to all lists</Link>
+      </div>
     </div>
   )
 }

@@ -32,7 +32,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/lists'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -52,18 +52,18 @@ class SignIn extends Component {
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label></Form.Label>
               <Form.Control
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Email"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label></Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -79,6 +79,7 @@ class SignIn extends Component {
             >
               Submit
             </Button>
+
           </Form>
         </div>
       </div>
