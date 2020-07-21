@@ -1,4 +1,5 @@
 # Oasis Spaces
+![Home Page](https://user-images.githubusercontent.com/53062479/88051231-48468b80-cb26-11ea-88ac-f5a22fa13ba5.png)
 Oasis Spaces is designed to provide users the ability to create and track their lists in order to organize their lives. Users can create different kinds of lists ranging from to-do lists to bucket lists. Once an item or list is completed, users can check it off.
 
 ## Links
@@ -40,3 +41,16 @@ Lastly, we worked on the styling using React bootstrap and CSS, created the back
 
 ## Unsolved Problems
 We still need to update the checkbox feature to include a state so that the checkmarks can remain on the page when viewed again.
+
+## Images
+Sign-in Page
+![Sign-in](https://user-images.githubusercontent.com/53062479/88051203-3ebd2380-cb26-11ea-9ac0-237e7c0238e1.png)
+
+Home Page
+![Home Page](https://user-images.githubusercontent.com/53062479/88051231-48468b80-cb26-11ea-88ac-f5a22fa13ba5.png)
+
+A Specific List Page
+![A Specific List](https://user-images.githubusercontent.com/53062479/88051357-788e2a00-cb26-11ea-8660-c8f74586faba.png)
+
+A Specific Item with Note Page
+![A Specific Item with Note](https://user-images.githubusercontent.com/53062479/88051373-7f1ca180-cb26-11ea-865c-0dc74c73353f.png)
