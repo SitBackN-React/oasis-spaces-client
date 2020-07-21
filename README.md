@@ -3,9 +3,11 @@
 Oasis Spaces is designed to provide users the ability to create and track their lists in order to organize their lives. Users can create different kinds of lists ranging from to-do lists to bucket lists. Once an item or list is completed, users can check it off.
 
 ## Links
+
 - Deployed Site:
 - Back End API Repository: https://github.com/SitBackN-React/oasis-spaces
 - API URL: https://frozen-caverns-22231.herokuapp.com/
+
 
 ## Planning/Coding Experience
 As a group we first created a team culture code and planned out how we wanted to approach this project in terms of prioritizing features for our application. We decided to mob code and work on the features together as a team.
