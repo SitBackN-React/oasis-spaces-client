@@ -71,16 +71,27 @@ const List = (props) => {
   //     <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
   //   </li>
   // ))
+
+  const itemsJsx = list.items.map(item => (
+    <li key={item._id}>
+      <div className="list-row">
+        <input className="checkbox" type="checkbox" />
+      </div>
+
+      <div className="list-row">
+        <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
+      </div>
+    </li>
+  ))
+
   return (
     <div className="list-style">
       <h4>{list.name}</h4>
       <p>{list.description}</p>
       <div className="center">
-        <div className="list-display">{list.items.map(item => (
-          <li key={item._id}><input className="checkbox" type="checkbox" />
-            <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
-          </li>
-        ))}</div>
+        <div className="list-display">
+          {itemsJsx}
+        </div>
       </div>
       <br />
       <div>

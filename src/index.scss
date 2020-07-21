@@ -43,15 +43,6 @@ body {
 //   background-color: #ffffff;
 // }
 
-.center {
-  text-align: center;
-}
-
-.list-display {
-  display: inline-block;
-  text-align: left;
-}
-
 // .items {
 //   border: 5px solid #000000;
 //   border-radius: 10px;
@@ -68,6 +59,20 @@ body {
   margin: auto;
   border-style: groove;
   background-color: #ffffff;
+  max-width: calc(100vh - 30vh);
+}
+
+.center {
+  text-align: center;
+}
+
+.list-display {
+  display: inline-block;
+  text-align: left;
+}
+
+.list-row {
+  display: inline;
 }
 
 .button {
