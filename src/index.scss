@@ -1,11 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .footer {
   text-align: center;
   vertical-align: bottom;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 15px;
 }
 
 h4 {
@@ -20,6 +21,7 @@ ul {
 }
 
 .container {
+  margin-top: 40px;
   text-align: center;
   justify-content: center;
 }

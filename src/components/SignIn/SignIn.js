@@ -32,7 +32,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/lists'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -79,6 +79,7 @@ class SignIn extends Component {
             >
               Submit
             </Button>
+
           </Form>
         </div>
       </div>
