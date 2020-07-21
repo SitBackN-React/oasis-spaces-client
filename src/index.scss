@@ -34,29 +34,40 @@ body {
   font-family: 'Red Rose', cursive;
 }
 
-.lists {
-  border: 5px solid #000000;
-  border-radius: 10px;
-  padding: 10px;
-  margin: auto;
-  border-style: groove;
-}
+// .lists {
+//   border: 5px solid #000000;
+//   border-radius: 10px;
+//   padding: 10px;
+//   margin: auto;
+//   border-style: groove;
+//   background-color: #ffffff;
+// }
 
 .center {
   text-align: center;
 }
 
-.list {
+.list-display {
   display: inline-block;
   text-align: left;
 }
 
-.items {
+// .items {
+//   border: 5px solid #000000;
+//   border-radius: 10px;
+//   padding: 10px;
+//   margin: auto;
+//   border-style: groove;
+//   background-color: #ffffff;
+// }
+
+.list-style {
   border: 5px solid #000000;
   border-radius: 10px;
   padding: 10px;
   margin: auto;
   border-style: groove;
+  background-color: #ffffff;
 }
 
 .button {

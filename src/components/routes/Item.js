@@ -71,7 +71,7 @@ const Item = (props) => {
   }
 
   return (
-    <div className="items">
+    <div className="list-style">
       <h4>{item.name}</h4>
       <p>{item.note}</p>
       <button onClick={destroy}>Delete Item</button>

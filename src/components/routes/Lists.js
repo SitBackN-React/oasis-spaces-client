@@ -43,10 +43,10 @@ const Lists = (props) => {
   ))
 
   return (
-    <div className="lists">
+    <div className="list-style">
       <h4>My Lists</h4>
       <div className="center">
-        <div className="list">
+        <div className="list-display">
           {listsJsx}
         </div>
       </div>
