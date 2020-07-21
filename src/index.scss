@@ -34,20 +34,45 @@ body {
   font-family: 'Red Rose', cursive;
 }
 
-.lists {
-  border: 5px solid black;
+// .lists {
+//   border: 5px solid #000000;
+//   border-radius: 10px;
+//   padding: 10px;
+//   margin: auto;
+//   border-style: groove;
+//   background-color: #ffffff;
+// }
+
+// .items {
+//   border: 5px solid #000000;
+//   border-radius: 10px;
+//   padding: 10px;
+//   margin: auto;
+//   border-style: groove;
+//   background-color: #ffffff;
+// }
+
+.list-style {
+  border: 5px solid #000000;
   border-radius: 10px;
   padding: 10px;
   margin: auto;
   border-style: groove;
+  background-color: #ffffff;
+  max-width: calc(100vh - 30vh);
 }
 
-.items {
-  border: 5px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  margin: auto;
-  border-style: groove;
+.center {
+  text-align: center;
+}
+
+.list-display {
+  display: inline-block;
+  text-align: left;
+}
+
+.list-row {
+  display: inline;
 }
 
 .button {
