@@ -8,11 +8,6 @@ Oasis Spaces is designed to provide users the ability to create and track their 
 - [Backend API URL](https://frozen-caverns-22231.herokuapp.com/)
 
 
-- Deployed Site:
-- Back End API Repository: https://github.com/SitBackN-React/oasis-spaces
-- API URL: https://frozen-caverns-22231.herokuapp.com/
-
-
 ## Planning/Coding Experience
 As a group we first created a team culture code and planned out how we wanted to approach this project in terms of prioritizing features for our application. We decided to mob code and work on the features together as a team.
 
