@@ -22,9 +22,9 @@ const ListForm = ({ list, handleSubmit, handleChange, cancelPath }) => (
       />
     </div>
     <br />
-    <button type="submit">Submit</button>
+    <button type="submit" className="btn btn-primary">Submit</button>
     <Link to={cancelPath}>
-      <button>Cancel</button>
+      <button className="btn btn-danger">Cancel</button>
     </Link>
   </form>
 )

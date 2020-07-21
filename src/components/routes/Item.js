@@ -74,9 +74,9 @@ const Item = (props) => {
     <div className="list-style">
       <h4>{item.name}</h4>
       <p>{item.note}</p>
-      <button onClick={destroy}>Delete Item</button>
+      <button className="btn btn-danger" onClick={destroy}>Delete Item</button>
       <Link to={`/lists/${props.match.params.id}/items/${props.match.params.itemId}/edit-item`}>
-        <button className="button">Edit Item</button>
+        <button className="button btn btn-warning">Edit Item</button>
       </Link>
       <Link to={`/lists/${props.match.params.id}`}>Back to list</Link>
     </div>

@@ -95,12 +95,12 @@ const List = (props) => {
       </div>
       <br />
       <div>
+        <button className="button btn btn-danger" onClick={destroy}>Delete List</button>
         <Link to={`/lists/${props.match.params.id}/create-item`}>
-          <button className="button">Create Item</button>
+          <button className="button btn btn-success">Create Item</button>
         </Link>
-        <button className="button" onClick={destroy}>Delete List</button>
         <Link to={`/lists/${props.match.params.id}/edit`}>
-          <button className="button">Edit List</button>
+          <button className="button btn btn-warning">Edit List</button>
         </Link>
       </div>
       <div>

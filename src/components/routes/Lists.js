@@ -57,7 +57,7 @@ const Lists = (props) => {
         </div>
       </div>
       <Link to={'/create-list'}>
-        <button className="button">Create List</button>
+        <button className="button btn btn-success" >Create List</button>
       </Link>
     </div>
   )
