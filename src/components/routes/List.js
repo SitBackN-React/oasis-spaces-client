@@ -75,19 +75,26 @@ const List = (props) => {
     <div>
       <h4>{list.name}</h4>
       <p>{list.description}</p>
-      <div>{list.items.map(item => (
-        <li key={item._id}><input className="checkbox" type="checkbox" />
-          <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
-        </li>
-      ))}</div>
-      <Link to={`/lists/${props.match.params.id}/create-item`}>
-        <button className="button">Create Item</button>
-      </Link>
-      <button className="button" onClick={destroy}>Delete List</button>
-      <Link to={`/lists/${props.match.params.id}/edit`}>
-        <button className="button">Edit List</button>
-      </Link>
-      <Link to='/lists'>Back to all lists</Link>
+      <div className="center">
+        <div className="list">{list.items.map(item => (
+          <li key={item._id}><input className="checkbox" type="checkbox" />
+            <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
+          </li>
+        ))}</div>
+      </div>
+      <br />
+      <div>
+        <Link to={`/lists/${props.match.params.id}/create-item`}>
+          <button className="button">Create Item</button>
+        </Link>
+        <button className="button" onClick={destroy}>Delete List</button>
+        <Link to={`/lists/${props.match.params.id}/edit`}>
+          <button className="button">Edit List</button>
+        </Link>
+      </div>
+      <div>
+        <Link to='/lists'>Back to all lists</Link>
+      </div>
     </div>
   )
 }

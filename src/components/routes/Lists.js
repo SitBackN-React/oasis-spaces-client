@@ -44,10 +44,15 @@ const Lists = (props) => {
 
   return (
     <div className="lists">
-      <h4>Lists</h4>
-      <ul>
-        {listsJsx}
-      </ul>
+      <h4>My Lists</h4>
+      <div className="center">
+        <div className="list">
+          {listsJsx}
+        </div>
+      </div>
+      <Link to={'/create-list'}>
+        <button className="button">Create List</button>
+      </Link>
     </div>
   )
 }
