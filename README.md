@@ -7,8 +7,17 @@ Oasis Spaces is designed to provide users the ability to create and track their 
 - Back End API Repository: https://github.com/SitBackN-React/oasis-spaces
 - API URL: https://frozen-caverns-22231.herokuapp.com/
 
-## Wireframes
-![Oasis_Spaces_Wireframes_MVP](https://media.git.generalassemb.ly/user/28180/files/0ded7200-c680-11ea-9f32-be91c9f7385b)
+## Planning/Coding Experience
+As a group we first created a team culture code and planned out how we wanted to approach this project in terms of prioritizing features for our application. We decided to mob code and work on the features together as a team.
+
+We first worked on the wireframes based on the user stories. Then, we started to work on the backend API, which can be found here: https://github.com/SitBackN-React/oasis-spaces
+
+Once the backend API was completed, we worked on the front end by first testing the authentication portion. Afterwards, we built our routes and components for the list model and item subdocument by completing the CRUD features. We also included redirect links in order to have a smooth user interface experience.
+
+Lastly, we worked on the styling using React bootstrap and CSS, created the background image, and deployed our application.
+
+## Unsolved Problems
+We still need to update the checkbox feature to include a state so that the checkmarks can remain on the page when viewed again.
 
 ## User Stories
 1. As an unregistered user, I would like to sign up with email and password.
@@ -30,19 +39,10 @@ Oasis Spaces is designed to provide users the ability to create and track their 
 - HTML
 - Adobe Illustrator
 
-## Planning/Coding Experience
-As a group we first created a team culture code and planned out how we wanted to approach this project in terms of prioritizing features for our application. We decided to mob code and work on the features together as a team.
-
-We first worked on the wireframes based on the user stories. Then, we started to work on the backend API, which can be found here: https://github.com/SitBackN-React/oasis-spaces
-
-Once the backend API was completed, we worked on the front end by first testing the authentication portion. Afterwards, we built our routes and components for the list model and item subdocument by completing the CRUD features. We also included redirect links in order to have a smooth user interface experience.
-
-Lastly, we worked on the styling using React bootstrap and CSS, created the background image, and deployed our application.
-
-## Unsolved Problems
-We still need to update the checkbox feature to include a state so that the checkmarks can remain on the page when viewed again.
-
 ## Images
+Wireframes
+![Oasis_Spaces_Wireframes_MVP](https://media.git.generalassemb.ly/user/28180/files/0ded7200-c680-11ea-9f32-be91c9f7385b)
+
 Sign-in Page
 ![Sign-in](https://user-images.githubusercontent.com/53062479/88051203-3ebd2380-cb26-11ea-9ac0-237e7c0238e1.png)
 
