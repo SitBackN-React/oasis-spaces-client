@@ -8,8 +8,12 @@ import messages from './../AutoDismissAlert/messages'
 
 const Lists = (props) => {
   const [lists, setLists] = useState([])
-  const { msgAlert } = props
+  const [checked, setChecked] = useState({
+    checkmark: []
+  })
 
+  const { msgAlert } = props
+  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/lists`,
@@ -18,6 +22,10 @@ const Lists = (props) => {
         'Authorization': `Token token=${props.user.token}`
       }
     })
+      .then(res => {
+        console.log(res)
+        return res
+      })
       .then(res => setLists(res.data.lists))
       // .catch(console.error)
 
@@ -36,13 +44,23 @@ const Lists = (props) => {
       })
   }, [])
 
+  const checkMark = (id) => setChecked((e) => {
+    console.log('checkmark is currently ', id, !e.checkmark)
+    if (e.checkmark.includes(id)) {
+      e.checkmark.pop(id)
+    } else {
+      e.checkmark.push(id)
+    }
+    return { checkmark: e.checkmark }
+  })
+
   const listsJsx = lists.map(list => (
     <li key={list._id}>
       <div className="list-row">
-        <input className="checkbox" type="checkbox" />
+        <input className="checkbox" type="checkbox" onChange={() => checkMark(list._id)} value={list.checkmark}/>
       </div>
 
-      <div className="list-row">
+      <div className="list-row" style= {{ textDecoration: checked.checkmark.includes(list._id) ? 'line-through' : 'none' }} >
         <Link to={`/lists/${list._id}`}>{list.name}</Link>
       </div>
     </li>
