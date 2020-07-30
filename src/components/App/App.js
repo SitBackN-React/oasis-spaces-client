@@ -40,6 +40,7 @@ class App extends Component {
   render () {
     const { msgAlerts, user } = this.state
 
+    console.log(this.props)
     return (
       <Fragment>
         <Header user={user} />
@@ -63,8 +64,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/lists' render={() => (
             <Lists msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/lists/:id' render={(props) => (
-            <List {...props} msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/lists/:id' render={() => (
+            <List msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/lists/:id/edit' render={(props) => (
             <ListEdit {...props} msgAlert={this.msgAlert} user={user} />
