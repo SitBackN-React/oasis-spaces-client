@@ -56,7 +56,8 @@ const CheckMark = (props) => {
   return (
     <li key={props.list._id}>
       <div className="list-row">
-        <input className="checkbox" type="checkbox" onChange={() => checkMark(props.list._id)} handleSubmit={handleSubmit} handleChange={handleChange} value={props.list.checkmark}/>
+        <input className="checkbox" type="checkbox" onChange={() => checkMark(props.list._id)} handleSubmit={(event) => handleSubmit(event)} handleChange={(event) => handleChange(event)} value={props.list.checkmark}/>
+
       </div>
 
       <div className="list-row" style= {{ textDecoration: checked.checkmark === true ? 'line-through' : 'none' }} >
