@@ -42,7 +42,7 @@ const Lists = (props) => {
       })
   }, [])
 
-  const listsJsx = lists.map(list => <CheckMark key={list._id} list={list} />)
+  const listsJsx = lists.map(list => <CheckMark {...props} key={list._id} list={list} />)
 
   return (
     <div className="list-style">
