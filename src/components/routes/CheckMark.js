@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom'
 
 const CheckMark = (props) => {
   const [checked, setChecked] = useState({
-    checkmark: []
+    checkmark: false
   })
   console.log(props)
 
   const checkMark = (id) => setChecked((e) => {
-    console.log('checkmark is currently ', id, !e.checkmark)
-    if (e.checkmark.includes(id)) {
-      e.checkmark.pop(id)
+    console.log(!e.checkmark)
+    if (e.checkmark === false) {
+      e.checkmark = true
     } else {
-      e.checkmark.push(id)
+      e.checkmark = false
     }
+    console.log('checkmark is currently ', id, 'right now, the checkmark is ', e.checkmark, 'opposite of checkmark status ', !e.checkmark)
     return { checkmark: e.checkmark }
   })
 
@@ -23,7 +24,7 @@ const CheckMark = (props) => {
         <input className="checkbox" type="checkbox" onChange={() => checkMark(props.list._id)} value={props.list.checkmark}/>
       </div>
 
-      <div className="list-row" style= {{ textDecoration: checked.checkmark.includes(props.list._id) ? 'line-through' : 'none' }} >
+      <div className="list-row" style= {{ textDecoration: checked.checkmark === true ? 'line-through' : 'none' }} >
         <Link to={`/lists/${props.list._id}`}>{props.list.name}</Link>
       </div>
     </li>
