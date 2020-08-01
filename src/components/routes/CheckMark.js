@@ -16,26 +16,29 @@ const CheckMark = (props) => {
     console.log(!e.checkmark)
     return { checkmark: !e.checkmark }
   })
-  console.log(checked)
-
+  // console.log(checked)
+  console.log(checked, props.list.name, props.list.description)
   const handleSubmit = event => {
     event.preventDefault()
     axios({
-      url: `${apiUrl}/lists/${props.list._id}`,
+      url: `${apiUrl}/lists/${props.list._id}/checkmark`,
       method: 'PATCH',
       headers: {
         'Authorization': `Token token=${props.user.token}`
       },
       // updating the checked property of a list
       data: { list: {
-        checked: checked.checkmark } }
+        checked: checked.checkmark,
+        name: props.list.name,
+        description: props.list.description } }
     })
+      .then(res => console.log(res))
       .catch(console.error)
   }
   return (
     <li key={props.list._id}>
       <div className="list-row">
-        <input className="checkbox" type="button" onClick={(event) => {
+        <input className="checkbox" type="button" value={checked.checkmark} onClick={(event) => {
           handleChange(event)
           handleSubmit(event)
         } } />
