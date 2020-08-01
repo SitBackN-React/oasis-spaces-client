@@ -14,12 +14,13 @@ const CheckMark = (props) => {
 
   const handleChange = (event) => setChecked((e) => {
     console.log(!e.checkmark)
-    return { checkmark: !e.checkmark }
+    const toggleLogic = { checkmark: !e.checkmark }
+    return toggleLogic
   })
   console.log(checked)
 
   const handleSubmit = event => {
-    event.preventDefault()
+    // event.preventDefault()
     axios({
       url: `${apiUrl}/lists/${props.list._id}`,
       method: 'PATCH',
@@ -37,8 +38,7 @@ const CheckMark = (props) => {
     <li key={props.list._id}>
       <div className="list-row">
         <input className="checkbox" type="checkbox" onChange={(event) => {
-          handleChange(event)
-          handleSubmit(event)
+          handleSubmit(handleChange(event))
         } } value={props.list.checkmark}/>
 
       </div>

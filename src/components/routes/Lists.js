@@ -20,10 +20,7 @@ const Lists = (props) => {
         'Authorization': `Token token=${props.user.token}`
       }
     })
-      .then(res => {
-        console.log(res)
-        return res
-      })
+
       .then(res => setLists(res.data.lists))
       // .catch(console.error)
 
