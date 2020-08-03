@@ -74,7 +74,6 @@ const List = (props) => {
   const itemsJsx = list.items.map(item => (
     <li key={item._id}>
       <div className="list-row">
-        <input className="checkbox" type="checkbox" />
       </div>
       <div className="list-row">
         <Link to={`/lists/${props.match.params.id}/items/${item._id}`}>{item.name}</Link>
