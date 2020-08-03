@@ -40,7 +40,7 @@ class App extends Component {
   render () {
     const { msgAlerts, user } = this.state
 
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <Fragment>
         <Header user={user} />
