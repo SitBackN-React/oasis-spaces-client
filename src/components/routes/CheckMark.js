@@ -8,14 +8,19 @@ const CheckMark = (props) => {
     name: props.list.name,
     description: props.list.description,
     // checkmark: false
-    checkmark: props.list.checkmark
+    checkmark: props.list.checkmark,
+    didChange: false
   })
   // const [setUpdated] = useState(false)
   // console.log(props)
 
   const handleChange = (event) => setChecked((e) => {
-    console.log(!e.checkmark)
-    return { name: props.list.name, description: props.list.description, checkmark: !props.list.checkmark }
+    // console.log(!e.checkmark)
+
+    return { name: props.list.name,
+      description: props.list.description,
+      checkmark: !checked.checkmark
+    }
   })
   // console.log(checked)
   // console.log(checked, props.list.name, props.list.description)
@@ -29,7 +34,7 @@ const CheckMark = (props) => {
       },
       // updating the checked property of a list
       data: { list: {
-        checkmark: checked.checkmark,
+        checkmark: !checked.checkmark,
         name: props.list.name,
         description: props.list.description } }
     })
@@ -41,7 +46,7 @@ const CheckMark = (props) => {
   return (
     <li key={props.list._id}>
       <div className="list-row">
-        <input className="checkbox" type="button" value={checked.checkmark} onClick={(event) => {
+        <input className="checkbox" type="button" value={ checked.checkmark } onClick={(event) => {
           handleChange(event)
           handleSubmit(event)
         } } />
