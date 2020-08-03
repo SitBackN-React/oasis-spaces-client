@@ -7,17 +7,18 @@ const CheckMark = (props) => {
   const [checked, setChecked] = useState({
     name: props.list.name,
     description: props.list.description,
-    checkmark: false
+    // checkmark: false
+    checkmark: props.list.checkmark
   })
   // const [setUpdated] = useState(false)
-  console.log(props)
+  // console.log(props)
 
   const handleChange = (event) => setChecked((e) => {
     console.log(!e.checkmark)
-    return { checkmark: !e.checkmark }
+    return { name: props.list.name, description: props.list.description, checkmark: !props.list.checkmark }
   })
   // console.log(checked)
-  console.log(checked, props.list.name, props.list.description)
+  // console.log(checked, props.list.name, props.list.description)
   const handleSubmit = event => {
     event.preventDefault()
     axios({
@@ -28,13 +29,15 @@ const CheckMark = (props) => {
       },
       // updating the checked property of a list
       data: { list: {
-        checked: checked.checkmark,
+        checkmark: checked.checkmark,
         name: props.list.name,
         description: props.list.description } }
     })
       .then(res => console.log(res))
       .catch(console.error)
   }
+  console.log(props.list)
+  console.log(' ')
   return (
     <li key={props.list._id}>
       <div className="list-row">
