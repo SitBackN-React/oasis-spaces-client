@@ -11,7 +11,7 @@ const Lists = (props) => {
   const [lists, setLists] = useState([])
 
   const { msgAlert } = props
-  console.log(props)
+  // console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/lists`,
@@ -20,10 +20,10 @@ const Lists = (props) => {
         'Authorization': `Token token=${props.user.token}`
       }
     })
-      .then(res => {
-        console.log(res)
-        return res
-      })
+      // .then(res => {
+      //   console.log(res)
+      //   return res
+      // })
       .then(res => setLists(res.data.lists))
       // .catch(console.error)
 

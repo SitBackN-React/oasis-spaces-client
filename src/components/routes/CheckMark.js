@@ -8,8 +8,8 @@ const CheckMark = (props) => {
     name: props.list.name,
     description: props.list.description,
     // checkmark: false
-    checkmark: props.list.checkmark,
-    didChange: false
+    checkmark: props.list.checkmark
+    // didChange: false
   })
   // const [setUpdated] = useState(false)
   // console.log(props)
@@ -38,11 +38,11 @@ const CheckMark = (props) => {
         name: props.list.name,
         description: props.list.description } }
     })
-      .then(res => console.log(res))
+      // .then(res => console.log(res))
       .catch(console.error)
   }
-  console.log(props.list)
-  console.log(' ')
+  // console.log(props.list)
+  // console.log(' ')
   return (
     <li key={props.list._id}>
       <div className="list-row">
