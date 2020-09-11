@@ -46,7 +46,7 @@ const CheckMark = (props) => {
   return (
     <li key={props.list._id}>
       <div className="list-row">
-        <input className="checkbox" type="button" value={ checked.checkmark } onClick={(event) => {
+        <input className="checkbox" type="button" value={ checked.checkmark ? '✔' : '' } onClick={(event) => {
           handleChange(event)
           handleSubmit(event)
         } } />
