@@ -89,9 +89,10 @@ img {
 .checkbox {
   width: 30px;
   height: 30px;
-  margin: 10px 15px;
+  margin: 5px 15px 2px;
 }
 
 li {
-  list-style: none
+  list-style: none;
+  justify-content: center;
 }
